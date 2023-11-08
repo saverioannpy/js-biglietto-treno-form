@@ -11,7 +11,7 @@ bottoneGenera.addEventListener('click', //evento in ascolto sul bottone "Genera"
     function(){
         let passeggeroOfferta;
         const passeggeroNome = document.getElementById('passeggeroNomeSelect').value; //L'utente inserisce il proprio nome;
-        console.log('[INPUT:]nome passeggero: ' + passeggeroNome); //LOG NON VISUALIZZATO!!!! 
+        console.log('[INPUT:]nome passeggero: ' + passeggeroNome); 
         const bigliettoKm = Number(document.getElementById('bigliettoKmSelect').value); //L'utente inserisce la distanza;
         console.log('[INPUT:]km inseriti: ' + bigliettoKm);
         const passeggeroEta = document.getElementById('passeggeroEtaSelect').value;//L'utente inserisce la sua età;
@@ -37,19 +37,24 @@ bottoneGenera.addEventListener('click', //evento in ascolto sul bottone "Genera"
         }
     bigliettoPrezzo = bigliettoPrezzo - passeggeroSconto; //applicazione sconto al costo del biglietto.
     console.log('[CALC:]prezzo biglietto: ' + (bigliettoPrezzo).toFixed(2)); //Console-log del prezzo Finale.
-    const mainBottomOut = document.getElementById('mainBottomId');
-    console.log(mainBottomOut);
-    mainBottomOut.classList.replace("d-none", "d-block");
-    const passeggeroNomeOut = document.getElementById('passeggetoNomeId'); //Viene preso l'elemento p del campo Nome Passeggero
-    passeggeroNomeOut.innerHTML = passeggeroNome;
-    const passeggeroOffertaOut = document.getElementById('passeggeroOffertaId');//Viene preso l'elemento p del campo  Offerta
-    passeggeroOffertaOut.innerHTML = passeggeroOfferta;
-    const passeggeroCarrozzaOut = document.getElementById('passeggeroCarrozzaId');//Viene preso l'elemento p del campo Carrozza
-    passeggeroCarrozzaOut.innerHTML = '5';
-    const passeggeroCodiceOut = document.getElementById('passeggeroCodiceId');//Viene preso l'elemento p del campo Codice CP
-    passeggeroCodiceOut.innerHTML = '123456';
-    const passeggeroBigliettoOut = document.getElementById('passeggeroBigliettoId');//Viene preso l'elemento p del campo del prezzo del biglietto
-    passeggeroBigliettoOut.innerHTML = bigliettoPrezzo.toFixed(2);
+    if((passeggeroNome !== "") && (bigliettoKm !== 0)){
+        const mainBottomOut = document.getElementById('mainBottomId');
+        console.log(mainBottomOut);
+        mainBottomOut.classList.replace("d-none", "d-block");
+        const passeggeroNomeOut = document.getElementById('passeggetoNomeId'); //Viene preso l'elemento p del campo Nome Passeggero
+        passeggeroNomeOut.innerHTML = passeggeroNome;
+        const passeggeroOffertaOut = document.getElementById('passeggeroOffertaId');//Viene preso l'elemento p del campo  Offerta
+        passeggeroOffertaOut.innerHTML = passeggeroOfferta;
+        const passeggeroCarrozzaOut = document.getElementById('passeggeroCarrozzaId');//Viene preso l'elemento p del campo Carrozza
+        passeggeroCarrozzaOut.innerHTML = '5';
+        const passeggeroCodiceOut = document.getElementById('passeggeroCodiceId');//Viene preso l'elemento p del campo Codice CP
+        passeggeroCodiceOut.innerHTML = '123456';
+        const passeggeroBigliettoOut = document.getElementById('passeggeroBigliettoId');//Viene preso l'elemento p del campo del prezzo del biglietto
+        passeggeroBigliettoOut.innerHTML = bigliettoPrezzo.toFixed(2);
+    }else{
+        alert("Tutti i campi sono obbligatori");
+        console.log("[ERRORE]nome del passeggero");
+    }
     }
 );
 const bottoneReset = document.getElementById('resetBtn');

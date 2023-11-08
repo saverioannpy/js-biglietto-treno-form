@@ -39,6 +39,6 @@ Commenti:
 
     2. Viene utilizzata una sola variabile bigliettoPrezzo che non sarà una variabile costante ma sarà la stessa variabile che conterrà il primo calcolo sul prezzo e il successivo prezzo scontato.
 
-    3. LOC:18 viene effettuato un console-log al di fuori del ciclo in modo tale da darci un aggiornamento a schermo sulla variazione del prezzo a prescindere se lo sconto venga applicato o meno. 
+    3. Viene effettuato un console-log al di fuori del ciclo in modo tale da darci un aggiornamento a schermo sulla variazione del prezzo a prescindere se lo sconto venga applicato o meno. 
 
     4. Nel caso in cui lo sconto venga applicato si utilizza si utilizza il metodo .toFixed(2) per poter approssimare il risultato finale a sole due cifre decimali.
