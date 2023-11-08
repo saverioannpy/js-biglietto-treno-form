@@ -1,0 +1,26 @@
+/***** Body *******/
+
+body{
+    background-color: #b91547;
+    font-family: 'Roboto', sans-serif;
+}
+
+body .main-top label,
+body .main-top .container-btn input{
+    color: #b91547;
+    
+}
+
+body .main-top input,
+body .main-top select
+{
+    border: 3px solid #b91547;
+}
+
+body .main-top .container-btn input{
+    border-color: #757575;
+}
+
+body .main-top .container-btn input:active{
+    border-color: #f79757;
+}
